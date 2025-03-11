@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="gallery-container">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item" data-section="gallery" title="Галерея"><i class="fas fa-image"></i></a>
+                <a href="#" class="nav-item" data-section="tags" title="Все теги"><i class="fas fa-tags"></i></a>
+                <a href="#" class="nav-item" data-action="add-image" title="Добавить изображение"><i class="fas fa-plus"></i></a>
+                <div class="mobile-search-icon-wrapper mobile-only">
+                    <i class="fas fa-search mobile-search-icon"></i>
+                </div>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Поиск...">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            <div class="mobile-search-overlay mobile-only" id="mobile-search-overlay">
+                <div class="mobile-search-container">
+                    <div class="mobile-search-header">
+                        <h2>Поиск</h2>
+                        <span class="close-search-btn">×</span>
+                    </div>
+                    <input type="text" id="mobile-search-input" placeholder="Поиск...">
+                    <button class="search-btn" id="mobile-search-btn">Поиск</button>
+                </div>
+            </div>
+
+            <section class="gallery-section active" id="gallery-section">
+                <header class="header">
+                    <h1>Галерея</h1>
+                </header>
+                <div class="gallery" id="gallery"></div>
+            </section>
+            <section class="tags-section" id="tags-section">
+                <header class="header">
+                    <h1>Все теги</h1>
+                </header>
+                <div class="tags-list" id="tags-list"></div>
+                <div class="tag-gallery" id="tag-gallery"></div>
+            </section>
+        </main>
+        <div class="add-form-overlay" id="add-form-overlay">
+            <section class="add-form">
+                <h2>Добавить<span class="close-btn">×</span></h2>
+                <form id="image-form">
+                    <input type="text" id="image-url" placeholder="URL изображения" required>
+                    <input type="text" id="image-title" placeholder="Название" required>
+                    <textarea id="image-desc" placeholder="Описание" required></textarea>
+                    <div class="tags-input-container">
+                        <div class="tags-display" id="tags-display"></div>
+                        <div class="tag-input-group">
+                            <input type="text" id="tag-input" placeholder="Введите тег">
+                            <button type="button" id="add-tag-btn">Добавить</button>
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-btn">Добавить</button>
+                </form>
+            </section>
+        </div>
+        <div class="edit-form-overlay" id="edit-form-overlay">
+    <section class="edit-form">
+        <h2>Редактировать<span class="close-btn">×</span></h2>
+        <img id="edit-image-preview" src="" alt="Превью изображения" style="width: 100%; max-height: 300px; object-fit: contain; margin-bottom: 15px;">
+        <form id="edit-image-form">
+            <input type="text" id="edit-image-url" placeholder="URL изображения" required>
+            <input type="text" id="edit-image-title" placeholder="Название" required>
+            <textarea id="edit-image-desc" placeholder="Описание" required></textarea>
+            <div class="tags-input-container">
+                <div class="tags-display" id="edit-tags-display"></div>
+                <div class="tag-input-group">
+                    <input type="text" id="edit-tag-input" placeholder="Введите тег">
+                    <button type="button" id="edit-add-tag-btn">Добавить</button>
+                </div>
+            </div>
+            <button type="submit" class="submit-btn">Сохранить</button>
+
+            <button type="button" class="delete-btn" id="delete-image-btn">Удалить фото</button>
+        </form>
+    </section>
+</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
